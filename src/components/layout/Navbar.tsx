@@ -1,10 +1,17 @@
 'use client';
-import React, { useState } from 'react';
+
 import Link from 'next/link';
+import Image from 'next/image';
+import React, { useState } from 'react';
+import { usePathname } from 'next/navigation';
+
+import profile_logo from '@/assets/Logo.svg';
 
 type Props = {};
 
 const Navbar = (props: Props) => {
+  const pathName = usePathname();
+
   const [show, setShow] = useState(false);
   return (
     <div
@@ -12,41 +19,69 @@ const Navbar = (props: Props) => {
         show && 'max-lg:!h-screen'
       } duration-300 ease-in-out`}
     >
-      <div className='text-black hover:scale-[1.06] customTransition'>LOGO</div>
+      <div className='text-black hover:scale-[1.06] customTransition flex items-center h-fit gap-2 cursor-pointer'>
+        <Image
+          src={profile_logo}
+          alt='Profile_logo'
+        />
+        <span className='text-[16px] font-semibold leading-[21px]'>
+          Malik Zulqurnain.
+        </span>
+      </div>
 
       <div className='max-lg:mt-10 max-lg:w-full max-lg:order-10 flex items-center max-lg:flex-col gap-8'>
         <Link
-          className='text-black hover:scale-[1.06] customTransition'
+          className='text-black hover:scale-[1.06] customTransition relative'
           href={'/'}
         >
           Home
+          {pathName === '/' ? (
+            <span className='w-[6px] h-[6px] rounded-full bg-[#FFC310] absolute left-[50%] -bottom-[8px]'></span>
+          ) : (
+            ''
+          )}
         </Link>
         <Link
-          className='text-black hover:scale-[1.06] customTransition'
+          className='text-black hover:scale-[1.06] customTransition relative'
           href={'/about'}
         >
           About
+          {pathName.startsWith('/about') ? (
+            <span className='w-[6px] h-[6px] rounded-full bg-[#FFC310] absolute left-[50%] -bottom-[8px]'></span>
+          ) : (
+            ''
+          )}
         </Link>
         <Link
-          className='text-black hover:scale-[1.06] customTransition'
+          className='text-black hover:scale-[1.06] customTransition relative'
           href={'/portfolio'}
         >
           Portfolio
+          {pathName.startsWith('/portfolio') ? (
+            <span className='w-[6px] h-[6px] rounded-full bg-[#FFC310] absolute left-[50%] -bottom-[8px]'></span>
+          ) : (
+            ''
+          )}
         </Link>
         {/* <Link
-          className='text-black hover:scale-[1.06] customTransition'
+          className='text-black hover:scale-[1.06] customTransition relative'
           href={'/'}
         >
           Blog
         </Link> */}
         <Link
-          className='text-black hover:scale-[1.06] customTransition'
+          className='text-black hover:scale-[1.06] customTransition relative'
           href={'/faqs'}
         >
           FAQ's
+          {pathName.startsWith('/faqs') ? (
+            <span className='w-[6px] h-[6px] rounded-full bg-[#FFC310] absolute left-[50%] -bottom-[8px]'></span>
+          ) : (
+            ''
+          )}
         </Link>
         <Link
-          className='text-black hover:scale-[1.06] customTransition'
+          className='text-black hover:scale-[1.06] customTransition relative'
           // href={'/'}
           href='mailto:malikzulqarnain.neslit@gmail.com?subject=Get Qoute'
         >

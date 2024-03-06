@@ -7,79 +7,53 @@ import Slider from 'react-slick';
 // components
 import Section from '@/components/Section';
 import Divider from '@/components/elements/Divider';
-import ExpertiseSmallCard from '@/components/elements/ExpertiseSmallCard';
 import Heading from '@/components/elements/Heading';
+import ExpertiseSmallCardUpdate from '@/components/elements/ExpertiseSmallCardUpdated';
 // assets
-import expertise_bg_1 from '../../assets/expertise-bg-1.png';
-import expertise_bg_2 from '../../assets/expertise-bg-2.png';
-import expertise_bg_3 from '../../assets/expertise-bg-3.png';
+import reactJs from '../../assets/experties/react.png';
+import angularJs from '../../assets/experties/angular.png';
+import javascript from '../../assets/experties/javascript.png';
+import express from '../../assets/experties/express.png';
+import mongodb from '../../assets/experties/mongodb.png';
+import graphql from '../../assets/experties/graphql.png';
+import firebase from '../../assets/experties/firebase.png';
+import gcp from '../../assets/experties/gcp.png';
 
 type Props = {};
 
 const Section5 = (props: Props) => {
   const EXPERTISE = [
     {
-      category: 'category',
-      facebook: 'x',
-      image: expertise_bg_1,
-      instagram: 'x',
-      name: 'Lorem Ipsum',
-      pinterest: 'x',
-      twitter: 'x',
+      image: reactJs,
+      name: 'React JS',
     },
     {
-      category: 'category',
-      facebook: 'x',
-      image: expertise_bg_2,
-      instagram: 'x',
-      name: 'Lorem Ipsum',
-      pinterest: 'x',
-      twitter: 'x',
+      image: angularJs,
+      name: 'Angular',
     },
     {
-      category: 'category',
-      facebook: 'x',
-      image: expertise_bg_3,
-      instagram: 'x',
-      name: 'Lorem Ipsum',
-      pinterest: 'x',
-      twitter: 'x',
+      image: javascript,
+      name: 'Javascript',
     },
     {
-      category: 'category',
-      facebook: 'x',
-      image: expertise_bg_1,
-      instagram: 'x',
-      name: 'Lorem Ipsum',
-      pinterest: 'x',
-      twitter: 'x',
+      image: express,
+      name: 'Express',
     },
     {
-      category: 'category',
-      facebook: 'x',
-      image: expertise_bg_2,
-      instagram: 'x',
-      name: 'Lorem Ipsum',
-      pinterest: 'x',
-      twitter: 'x',
+      image: mongodb,
+      name: 'MongoDB',
     },
     {
-      category: 'category',
-      facebook: 'x',
-      image: expertise_bg_3,
-      instagram: 'x',
-      name: 'Lorem Ipsum',
-      pinterest: 'x',
-      twitter: 'x',
+      image: graphql,
+      name: 'GraphQL',
     },
     {
-      category: 'category',
-      facebook: 'x',
-      image: expertise_bg_1,
-      instagram: 'x',
-      name: 'Lorem Ipsum',
-      pinterest: 'x',
-      twitter: 'x',
+      image: firebase,
+      name: 'Firebase',
+    },
+    {
+      image: gcp,
+      name: 'Google Cloud Platform',
     },
   ];
   return (
@@ -143,24 +117,14 @@ const Section5 = (props: Props) => {
           },
         ]}
       >
-        {EXPERTISE?.map(
-          (
-            { category, facebook, image, instagram, name, pinterest, twitter },
-            index
-          ) => (
-            <ExpertiseSmallCard
-              index={index}
-              key={index + name}
-              category={category}
-              facebook={facebook}
-              image={image}
-              instagram={instagram}
-              name={name}
-              pinterest={pinterest}
-              twitter={twitter}
-            />
-          )
-        )}
+        {EXPERTISE?.map(({ image, name }, index) => (
+          <ExpertiseSmallCardUpdate
+            index={index}
+            key={index + name}
+            image={image}
+            name={name}
+          />
+        ))}
       </Slider>
     </Section>
   );

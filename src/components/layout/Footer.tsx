@@ -1,8 +1,11 @@
 import React from 'react';
-import Section from '../Section';
-import Divider from '../elements/Divider';
 import Link from 'next/link';
+import Image from 'next/image';
+
+import Section from '../Section';
 import Button from '../elements/Button';
+import Divider from '../elements/Divider';
+import profile_logo from '@/assets/Logo.svg';
 
 type Props = {};
 const styles = {
@@ -198,7 +201,18 @@ const Footer = (props: Props) => {
       </div>
 
       <div className='flex flex-wrap items-center justify-between mt-5'>
-        <div className='text-primary'>LOGO</div>
+        <Link
+          href={'/'}
+          className='text-primary flex gap-2 items-center cursor-pointer'
+        >
+          <Image
+            src={profile_logo}
+            alt='Profile_logo'
+          />
+          <span className='text-[16px] font-semibold leading-[21px]'>
+            Malik Zulqurnain.
+          </span>
+        </Link>
         <div className='flex items-center flex-wrap gap-8'>
           <Link
             className={styles.link1}
@@ -209,14 +223,14 @@ const Footer = (props: Props) => {
 
           <Link
             className={styles.link1}
-            href={'/'}
+            href={'/about'}
           >
             About
           </Link>
 
           <Link
             className={styles.link1}
-            href={'/'}
+            href={'/portfolio'}
           >
             Portfolio
           </Link>

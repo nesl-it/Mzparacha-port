@@ -13,7 +13,7 @@ export default function About() {
       <br />
       <br />
 
-      <Section className='bg-dark-1 !py-20'>
+      <Section className='text-white bg-dark-1 !py-20'>
         <div className='w-full flex flex-col md:flex-row md:items-end md:justify-between'>
           <div className='w-fit'>
             <Heading className='text-white'>

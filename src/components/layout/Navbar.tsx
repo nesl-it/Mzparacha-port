@@ -19,7 +19,10 @@ const Navbar = (props: Props) => {
         show && 'max-lg:!h-screen'
       } duration-300 ease-in-out`}
     >
-      <div className='text-black hover:scale-[1.06] customTransition flex items-center h-fit gap-2 cursor-pointer'>
+      <Link
+        href={'/'}
+        className='text-black hover:scale-[1.06] customTransition flex items-center h-fit gap-2 cursor-pointer'
+      >
         <Image
           src={profile_logo}
           alt='Profile_logo'
@@ -27,7 +30,7 @@ const Navbar = (props: Props) => {
         <span className='text-[16px] font-semibold leading-[21px]'>
           Malik Zulqurnain.
         </span>
-      </div>
+      </Link>
 
       <div className='max-lg:mt-10 max-lg:w-full max-lg:order-10 flex items-center max-lg:flex-col gap-8'>
         <Link

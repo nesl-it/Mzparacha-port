@@ -28,7 +28,7 @@ const Footer = (props: Props) => {
             that your site becomes a regular stop in their daily browsing.
             <br />
             <br />
-            <br />© 2015 Fresh, All Rights Reserved
+            <br />© 2018 MalikZ.dev, All Rights Reserved
           </p>
 
           <br />
@@ -134,19 +134,19 @@ const Footer = (props: Props) => {
           <Divider className={'!w-10 my-4'} />
 
           <Link
-            href={'/'}
+            href={'/about'}
             className={styles.link}
           >
-            About Company
+            About
           </Link>
-          <Link
+          {/* <Link
             href={'/'}
             className={styles.link}
           >
             Latest Services
-          </Link>
+          </Link> */}
           <Link
-            href={'/'}
+            href={'/portfolio'}
             className={styles.link}
           >
             Popular Works
@@ -183,12 +183,13 @@ const Footer = (props: Props) => {
           <h1 className={styles.heading}>Newsletter</h1>
           <Divider className={'!w-10 my-4'} />
           <p className='text-sm text-[#A7A7A7]'>
-            Information about current events related to our company
+            Information about current events related to Web and Mobile
+            Applications
           </p>
           <br />
           <br />
 
-          <div className='flex border-b border-[#757575] pb-5'>
+          {/* <div className='flex border-b border-[#757575] pb-5'>
             <input
               type='email'
               required
@@ -196,7 +197,7 @@ const Footer = (props: Props) => {
               className='text-sm placeholder:text-[#A7A7A7] text-white bg-transparent flex-1 focus:border-none focus:outline-none focus:shadow-none'
             />
             <Button className='text-white !p-2 !px-3 ml-2'>Sign Up</Button>
-          </div>
+          </div> */}
         </div>
       </div>
 
